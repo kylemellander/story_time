@@ -21,6 +21,7 @@ class SentencesController < ApplicationController
   end
 
   def edit
+    @image = Image.find(@sentence.image_id)
   end
 
   def update

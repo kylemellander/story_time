@@ -1,8 +1,8 @@
-<h1>Story</h1>
+<h1>Stories</h1>
 
 <ul>
   <% @stories.each do |story| %>
-     <li><%= link_to story.title, story_path(story) %></li>
+     <li><%= link_to story.title, story_path(story) %> created <%= time_ago_in_words(story.created_at) %> ago</li>
   <% end %>
 </ul>
 

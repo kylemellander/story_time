@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
   before_action :find_story, except: [:index, :new, :create]
 
   def index
-    @stories = Story.all
+    @stories = Story.all.order(created_at: :desc)
   end
 
   def new
