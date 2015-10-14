@@ -20,14 +20,31 @@ class SentencesController < ApplicationController
     @sentences = Sentence.all
   end
 
-  private
+  def edit
+  end
 
+  def update
+    if @sentence.update
+      redirect_to story_path(@story)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @sentence.destroy
+    redirect_to story_path(@story)
+  end
+
+  private
   def find_sentence
     @sentence = Sentence.find(params[:id])
   end
+
   def find_story
     @story = Story.find(params[:story_id])
   end
+
   def sentence_params
     params.require(:sentence).permit(:content, :user_id, :image_id, :image_content)
   end
