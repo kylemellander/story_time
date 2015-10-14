@@ -25,7 +25,7 @@ class SentencesController < ApplicationController
   end
 
   def update
-    if @sentence.update
+    if @sentence.update(sentence_params)
       redirect_to story_path(@story)
     else
       render :edit
@@ -43,6 +43,7 @@ class SentencesController < ApplicationController
   end
 
   def find_story
+
     @story = Story.find(params[:story_id])
   end
 
