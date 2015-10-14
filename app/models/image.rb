@@ -3,6 +3,5 @@ class Image < ActiveRecord::Base
 
   def self.random
     image = Image.find(rand(593))
-    image.content
   end
 end

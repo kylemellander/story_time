@@ -1,0 +1,16 @@
+<br>
+<%= fa_icon "#{@image.content} 5x" %>
+<h3>Write something about the image above</h3>
+<%= form_for [@story, @sentence] do |f| %>
+<div class='form-group'>
+  <%= f.label :content %>
+  <%= f.text_field :content, class: 'form-control' %>
+  <%= f.hidden_field :image_id, value: @image.id %>
+  <%= f.hidden_field :image_content, value: @image.content %>
+  <%= f.hidden_field :story_id, value: @story.id %>
+  <%= f.hidden_field :user_id, value: 1 %>
+</div>
+<%= f.submit class: 'btn btn-success' %>
+<% end %>
+
+<%= link_to 'Back', story_path(@story) %>
