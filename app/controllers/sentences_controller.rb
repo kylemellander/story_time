@@ -1,9 +1,12 @@
 class SentencesController < ApplicationController
   before_action :find_sentence, except: [:index, :new, :create]
   before_action :find_story
+  before_action :find_image
   #, only: [:create, :new, :update]
   def new
-    @image = Image.random
+    
+
+    # @images = Image.all.sample(6)
     @sentence = Sentence.new
   end
 
@@ -43,8 +46,10 @@ class SentencesController < ApplicationController
   end
 
   def find_story
-
     @story = Story.find(params[:story_id])
+  end
+  def find_image
+    @image = Image.find(params[:image_id])
   end
 
   def sentence_params

@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   root 'stories#index'
 
   resources :stories do
-      resources :sentences
+      resources :images do
+        resources :sentences
+      end
   end
-    resources :images
+  # resources :images do
+  #   resources :images
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

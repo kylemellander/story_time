@@ -4,15 +4,15 @@
     <div class="col-md-12 story-sentence">
       <li>
         <%= fa_icon "#{sentence.image_content} 5x" %> <%= sentence.content %>
-        <%= link_to 'Edit', edit_story_sentence_path(@story, sentence) %>
-        <%= link_to 'Delete', story_sentence_path(@story, sentence), data: {confirm: "Are you sure?",
+        <%= link_to 'Edit', edit_story_image_sentence_path(@story, @image, sentence) %>
+        <%= link_to 'Delete', story_image_sentence_path(@story, @image, sentence), data: {confirm: "Are you sure?",
           method: 'delete'} %>
         </li>
     </div>
 
   <% end %>
 </ul>
-<%= link_to 'Add to Story', new_story_sentence_path(@story) %>
+<%= link_to 'Add to Story', story_images_path(@story) %>
 
 
 <div>

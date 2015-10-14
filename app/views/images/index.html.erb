@@ -1,0 +1,5 @@
+<% @images.each do |image| %>
+  <%= fa_icon "#{image.content} 5x" %>
+<% end %>
+
+<%= link_to 'Random Image', new_story_image_sentence_path(@story, @images[rand(6)]), class: 'btn btn-primary' %>
