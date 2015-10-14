@@ -1,2 +1,11 @@
 <h1><%= @story.title %></h1>
+<%= link_to 'Add to Story', new_story_sentence_path(@story) %>
 <%= fa_icon "#{@image} 5x" %>
+
+<div>
+  <%= link_to 'Edit', edit_story_path(@story) %>
+</div>
+<div>
+<%= link_to 'Delete', story_path(@story), data: {confirm: "Are you sure?",
+                                                method: 'delete'} %>
+</div>
