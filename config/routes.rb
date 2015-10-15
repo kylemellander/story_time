@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :stories do
       resources :images do
-        resources :sentences
+        resources :sentences, except: :show
       end
   end
   # resources :images do

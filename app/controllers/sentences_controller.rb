@@ -58,6 +58,8 @@ class SentencesController < ApplicationController
     params.require(:sentence).permit(:content, :author, :image_id, :image_content, :story_id, :image)
   end
 
+# Redundant in model
+
   def user_email
     m = /^.*(?=(@))/.match(current_user.email)
     m[0]

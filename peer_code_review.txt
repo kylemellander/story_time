@@ -1,0 +1,30 @@
+Is the Github documentation - commits and README - thorough and descriptive?
+  Git commits are well written and descriptive.  It doesn't have a README, especially for the rake task.
+
+Is there good spec coverage?
+  The specs look well written and cover a variety of issues.
+
+Do all specs pass?
+  It looks like there are some errors in the way the tests are running that is causing them to fail.
+
+Is the application logic clear and easy to navigate?
+  The application is well designed with a good hierarchy.
+
+Is the site user-friendly?
+  pro
+    It has a great, simple format that is simple to view and works well.
+
+  con
+    It is a little confusing about the selection of the images and how that relates to the whole process. Some areas are insecure if you go there manually rather than through links.
+
+Are there opportunities for refactoring?
+  I think it might be worth it to add the rake task to the seed.db instead so that it is easier to set up initially.
+
+What features stand out?
+  The login system is great and the navigation is great that it is responsive to where you are.
+
+What features could be improved?
+  Better authentication of pages.
+
+Do you have any additional constructive criticism or positive feedback to share?
+  Great job!  This is a quality Rails site!
