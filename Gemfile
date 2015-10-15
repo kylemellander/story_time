@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'hirb'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "font-awesome-rails"
+gem 'devise'
 
 group :development do
   gem 'byebug'
