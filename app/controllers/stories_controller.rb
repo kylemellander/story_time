@@ -31,7 +31,7 @@ class StoriesController < ApplicationController
     else
       @sentences = @story.sentences
     end
-    @image = Image.random
+    @image = Image.first
     # byebug
   end
 
