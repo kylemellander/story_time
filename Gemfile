@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'ransack'
+gem "paperclip", "~> 4.3"
 
 group :development do
   gem 'byebug'

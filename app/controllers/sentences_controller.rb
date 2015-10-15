@@ -55,7 +55,7 @@ class SentencesController < ApplicationController
   end
 
   def sentence_params
-    params.require(:sentence).permit(:content, :author, :image_id, :image_content, :story_id)
+    params.require(:sentence).permit(:content, :author, :image_id, :image_content, :story_id, :image)
   end
 
   def user_email

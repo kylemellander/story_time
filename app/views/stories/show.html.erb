@@ -6,7 +6,13 @@
       <li>
         <div class="row">
           <div class="col-md-1">
-            <%= fa_icon "#{sentence.image_content} 5x" %>
+            
+
+            <% if sentence.image_file_name != nil %>
+              <%= image_tag sentence.image.url(:thumb) %>
+            <% else %>
+              <%= fa_icon "#{sentence.image_content} 5x" %>
+            <% end %>
           </div>
           <div class="col-md-6">
             <span class='story-content'><%= sentence.content %></span>
@@ -35,7 +41,7 @@
   <%end%>
 </div>
 <% if current_user %>
-  
+
 
 
   <div>

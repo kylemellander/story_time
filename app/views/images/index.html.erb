@@ -6,4 +6,11 @@
   <h3>Click an image above or</h3>
 </div>
 
+<div>
+  <h3><%= link_to 'Upload an image or', new_story_image_sentence_path(@story, @images[rand(6)], image:true) %></h3>
+</div>
+<br>
+<div>
+
 <%= link_to 'Random Image', new_story_image_sentence_path(@story, @images[rand(6)]), class: 'btn btn-primary' %>
+</div>

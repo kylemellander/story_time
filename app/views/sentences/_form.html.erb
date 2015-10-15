@@ -1,12 +1,19 @@
 <br>
-<%= fa_icon "#{@image.content} 5x" %>
-<h3>Write something about the image above</h3>
-<%= form_for [@story, @image, @sentence] do |f| %>
+<% if params['image'] != 'true' %>
+ <%= fa_icon "#{@image.content} 5x" %>
+ <h3>Write something about the image above</h3>
+<% else %>
+  <h3>Upload your image and write about it</h3>
+<% end %>
+<%= form_for [@story, @image, @sentence], html: { multipart: true } do |f| %>
 <div class='form-group'>
+  <%= f.file_field :image %>
+  <br>
   <%= f.label :content %>
   <%= f.text_field :content, class: 'form-control' %>
   <%= f.hidden_field :image_id, value: @image.id %>
   <%= f.hidden_field :image_content, value: @image.content %>
+
   <%= f.hidden_field :story_id, value: @story.id %>
   <%= f.hidden_field :author, value: "" %>
 </div>
