@@ -8,7 +8,7 @@
   <%= f.hidden_field :image_id, value: @image.id %>
   <%= f.hidden_field :image_content, value: @image.content %>
   <%= f.hidden_field :story_id, value: @story.id %>
-  <%= f.hidden_field :user_id, value: 1 %>
+  <%= f.hidden_field :author, value: "" %>
 </div>
 <%= f.submit class: 'btn btn-success' %>
 <% end %>

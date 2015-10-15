@@ -3,7 +3,7 @@
   <% @story.sentences.each do |sentence| %>
     <div class="col-md-12 story-sentence">
       <li>
-        <%= fa_icon "#{sentence.image_content} 5x" %> <%= sentence.content %>
+        <%= fa_icon "#{sentence.image_content} 5x" %> <%= sentence.content %> author: <%= "#{sentence.author}" %>
         <%= link_to 'Edit', edit_story_image_sentence_path(@story, @image, sentence) %>
         <%= link_to 'Delete', story_image_sentence_path(@story, @image, sentence), data: {confirm: "Are you sure?",
           method: 'delete'} %>
