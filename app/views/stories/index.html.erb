@@ -5,5 +5,6 @@
      <li><%= link_to story.title, story_path(story) %> created <%= time_ago_in_words(story.created_at) %> ago</li>
   <% end %>
 </ul>
-
+<% if current_user %>
 <%= link_to 'Add a Story', new_story_path %>
+<% end %>

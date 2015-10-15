@@ -1,27 +1,51 @@
 <h1><%= @story.title %></h1>
+
 <ul>
-  <% @story.sentences.each do |sentence| %>
+  <% @sentences.each do |sentence| %>
     <div class="col-md-12 story-sentence">
       <li>
-        <%= fa_icon "#{sentence.image_content} 5x" %> <%= sentence.content %> author: <%= "#{sentence.author}" %>
-        <%= link_to 'Edit', edit_story_image_sentence_path(@story, @image, sentence) %>
-        <%= link_to 'Delete', story_image_sentence_path(@story, @image, sentence), data: {confirm: "Are you sure?",
-          method: 'delete'} %>
+        <div class="row">
+          <div class="col-md-1">
+            <%= fa_icon "#{sentence.image_content} 5x" %>
+          </div>
+          <div class="col-md-6">
+            <span class='story-content'><%= sentence.content %></span>
+          </div>
+          <div class="col-md-2">
+            author: <span class='story-content'><%= "#{sentence.author}" %></span>
+          </div>
+          <% if current_user %>
+          <div class="col-md-2 sentence-edit">
+            <%= link_to 'Edit', edit_story_image_sentence_path(@story, @image, sentence) %>
+            <%= link_to 'Delete', story_image_sentence_path(@story, @image, sentence), data: {confirm: "Are you sure?",
+              method: 'delete'} %>
+          </div>
+          <% end %>
+        </div>
         </li>
     </div>
 
   <% end %>
 </ul>
-<%= link_to 'Add to Story', story_images_path(@story) %>
+<div >
+  <% if current_user.nil? %>
+  <%= link_to "Add to Story", new_user_session_path, class: "btn btn-primary" %>
+  <% else %>
+  <%= link_to "Add to Story", story_images_path(@story), class: "btn btn-primary" %>
+  <%end%>
+</div>
+<% if current_user %>
+  
 
 
-<div>
-  <%= link_to 'Edit', edit_story_path(@story) %>
-</div>
-<div>
-<%= link_to 'Delete', story_path(@story), data: {confirm: "Are you sure?",
-                                                 method: 'delete'} %>
-</div>
+  <div>
+    <%= link_to 'Edit', edit_story_path(@story) %>
+  </div>
+  <div>
+  <%= link_to 'Delete', story_path(@story), data: {confirm: "Are you sure?",
+                                                   method: 'delete'} %>
+  </div>
+<% end %>
 <div>
   <%= link_to 'Back', stories_path %>
 </div>

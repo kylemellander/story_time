@@ -1,5 +1,9 @@
 <% @images.each do |image| %>
-  <%= link_to (fa_icon "#{image.content} 5x"), new_story_image_sentence_path(@story, image) %>
+  <%= link_to (fa_icon "#{image.content} 5x"), new_story_image_sentence_path(@story, image), class: 'images' %>
 <% end %>
+
+<div>
+  <h3>Click an image above or</h3>
+</div>
 
 <%= link_to 'Random Image', new_story_image_sentence_path(@story, @images[rand(6)]), class: 'btn btn-primary' %>

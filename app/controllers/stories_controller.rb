@@ -2,7 +2,13 @@ class StoriesController < ApplicationController
   before_action :find_story, except: [:index, :new, :create]
 
   def index
-    @stories = Story.all.order(created_at: :desc)
+    #@stories = Story.all.order(created_at: :desc)
+    q = params[:q]
+
+
+
+    @stories = Story.search(title_cont: q).result
+    #binding.pry
   end
 
   def new
@@ -19,6 +25,12 @@ class StoriesController < ApplicationController
   end
 
   def show
+    q = params[:q]
+    if  q != nil
+      @sentences = Sentence.search(content_cont: q).result
+    else
+      @sentences = @story.sentences
+    end
     @image = Image.random
     # byebug
   end

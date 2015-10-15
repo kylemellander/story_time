@@ -5,3 +5,23 @@ ul {
 .story-sentence {
   margin-top: 2em;
 }
+
+.images {
+  color: black;
+  margin-right: 2em;
+}
+
+.images:hover {
+  color: lightblue;
+}
+
+.story-content {
+  font-size: 1.5em;
+  margin-left: 1em;
+  line-height: 3em;
+  word-wrap: break-word;
+}
+
+.sentence-edit {
+  line-height: 7em;
+}

@@ -10,11 +10,37 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">WebSiteName</a>
+        <%= link_to "Story Time", stories_path, class: "navbar-brand" %>
       </div>
       <div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li><%= link_to "Home", stories_path %></li>
+          <li>
+            <% if current_user %>
+              <%= link_to 'Add a Story', new_story_path %></li>
+            <% end %>
+          <li>
+            <% if current_user && @story %>
+              <% if @story.id %>
+                <%= link_to 'Add to Story', story_images_path(@story) %>
+              <% end %>
+            <% end %>
+          </li>
+
+          <li><a>
+            <% if @story %>
+              <%= form_tag "/#{params['controller']}/#{@story.id}", method: :get do %>
+              <%= text_field_tag :q, nil %>
+              <%= submit_tag 'Search' %>
+              <% end %>
+            <% else %>
+              <%= form_tag stories_path, method: :get do %>
+              <%= text_field_tag :q, nil %>
+              <%= submit_tag 'Search' %>
+              <% end %>
+            <% end %>
+
+          </a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
