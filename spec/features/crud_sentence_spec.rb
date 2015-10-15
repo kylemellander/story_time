@@ -5,6 +5,7 @@ describe 'creating a sentance' do
     story = FactoryGirl.create(:story, id: 1)
     visit '/stories/1'
     click_link 'Add to Story'
+    click_link 'Random Image'
     fill_in 'sentence_content', with: 'stuff'
     click_button 'Create Sentence'
     expect(page).to have_content 'stuff'
